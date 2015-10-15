@@ -6,7 +6,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "r72")
+(def +version+ "0.0.72-0")
 (bootlaces! +version+)
 
 (task-options!
