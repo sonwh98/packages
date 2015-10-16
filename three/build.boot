@@ -6,7 +6,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "0.0.72-0")
+(def +version+ "0.0.72-css3d")
 (bootlaces! +version+)
 
 (task-options!
@@ -14,13 +14,13 @@
       :version     +version+
       :description "JavaScript 3D library"
       :url         "http://threejs.org/"
-      :scm         {:url "https://github.com/mrdoob/three.js"}
+      :scm         {:url "https://github.com/sonwh98/three.js"}
       :license     {"MIT" "http://opensource.org/licenses/MIT"}})
 
 (deftask package []
   (comp
-   (download  :url      "https://github.com/mrdoob/three.js/archive/r72.zip"
-              :checksum "61B5D234234DA34D2AD27CC6A268FD18"
+   (download  :url      "https://github.com/sonwh98/three.js/archive/r72-css3d.zip"
+              :checksum "554532481fb32376f4a56f5cb8ab0d66"
               :unzip    true)
    (sift      :move     {#"^three\.js(.*)/build/three.js"
                          "cljsjs/three/development/three.inc.js"
