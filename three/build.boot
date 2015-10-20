@@ -19,12 +19,16 @@
 
 (deftask package []
   (comp
-   (download  :url      "https://github.com/sonwh98/three.js/archive/r72-css3d.zip"
-              :checksum "554532481fb32376f4a56f5cb8ab0d66"
-              :unzip    true)
-   (sift      :move     {#"^three\.js(.*)/build/three.js"
+   (download  :url      "https://raw.githubusercontent.com/sonwh98/three.js/r72-css3d/build/three.js"
+              :checksum "7046d21ba5708ee8c19bff61db8409be"
+              :unzip    false)
+   (download  :url      "https://raw.githubusercontent.com/sonwh98/three.js/r72-css3d/build/three.min.js"
+              :checksum "917960aa942b17f3a3aaefd9e0ca30cb"
+              :unzip    false)
+              
+   (sift      :move     {#"^three.js"
                          "cljsjs/three/development/three.inc.js"
-                         #"^three\.js(.*)/build/three.min.js"
+                         #"^three.min.js"
                          "cljsjs/three/production/three.min.inc.js"})
    (sift      :include  #{#"^cljsjs"})
    (deps-cljs :name     "cljsjs.three")))
