@@ -2294,7 +2294,9 @@ var THREE = {
       "fragmentShader": {}
     }
   },
-  "WebGLRenderer": function () {},
+  "WebGLRenderer":{"constructor": function(){},
+		   "setSize": function () {},
+		   "domElement":{}},
   "WebGLRenderTarget": function () {},
   "WebGLRenderTargetCube": function () {},
   "WebGLExtensions": function () {},
@@ -2426,5 +2428,10 @@ var THREE = {
   "VertexTangentsHelper": function () {},
   "WireframeHelper": function () {},
   "ImmediateRenderObject": function () {},
-  "MorphBlendMesh": function () {}
+  "MorphBlendMesh": function () {},
+  "TrackballControls": function (){},
+  "CSS3DRenderer":{"constructor": function(){},
+		   "setSize": function () {},
+		   "domElement":{}},
+  "CSS3DObject": function(){}
 };
