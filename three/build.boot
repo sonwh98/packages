@@ -25,7 +25,7 @@
    (download  :url      "https://raw.githubusercontent.com/sonwh98/three.js/r72-css3d/build/three.min.js"
               :checksum "917960aa942b17f3a3aaefd9e0ca30cb"
               :unzip    false)
-              
+
    (sift      :move     {#"^three.js"
                          "cljsjs/three/development/three.inc.js"
                          #"^three.min.js"
