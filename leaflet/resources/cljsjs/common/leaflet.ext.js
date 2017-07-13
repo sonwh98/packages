@@ -633,6 +633,7 @@ var L = {
   "Map": function () {},
   "map": {
     "addLayer": function () {},
+    "distance": function () {},
     "hasLayer": function () {},
     "eachLayer": function () {},
     "openPopup": function () {},

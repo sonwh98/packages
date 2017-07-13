@@ -4,7 +4,7 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "1.0.3")
+(def +lib-version+ "1.1.0")
 (def +version+ (str +lib-version+ "-1"))
 
 (task-options!
@@ -20,7 +20,7 @@
 (deftask package []
   (comp
    (download :url      (str "https://github.com/Leaflet/Leaflet/archive/v" +lib-version+ ".zip")
-             :checksum "9f2656a2627017e0ab2273324d0ffc91"
+             :checksum "ce28fe4b917cdfb55f362fdc19203c5d"
              :unzip    true)
    (sift :move {#"^Leaflet-(.*)/dist/leaflet-src.js"    "cljsjs/development/leaflet.inc.js"
                 #"^Leaflet-(.*)/dist/leaflet.js"        "cljsjs/production/leaflet.min.inc.js"
