@@ -654,6 +654,7 @@ var L = {
     "setMaxBounds": function () {},
     "locate": function () {},
     "latLngToContainerPoint": function(){},
+    "_latLngToNewLayerPoint": function(){},
     "containerPointToLatLng": function(){},
     "stopLocate": function () {},
     "remove": function () {},
