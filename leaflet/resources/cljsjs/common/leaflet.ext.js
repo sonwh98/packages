@@ -4,6 +4,12 @@
 
 var eventsKey = {};
 
+var Object={"center": {},
+	    "zoom": {},
+	    "type": {},
+	    "target": {}
+	   };
+
 var L = {
   "version": {},
   "noConflict": function () {},
@@ -655,6 +661,7 @@ var L = {
     "locate": function () {},
     "latLngToContainerPoint": function(){},
     "_latLngToNewLayerPoint": function(){},
+    "layerPointToContainerPoint": function(){},
     "containerPointToLatLng": function(){},
     "stopLocate": function () {},
     "remove": function () {},
