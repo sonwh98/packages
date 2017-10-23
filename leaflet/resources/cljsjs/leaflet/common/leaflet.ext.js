@@ -4,12 +4,6 @@
 
 var eventsKey = {};
 
-var Object={"center": {},
-	    "zoom": {},
-	    "type": {},
-	    "target": {}
-	   };
-
 var L = {
   "version": {},
   "noConflict": function () {},
@@ -639,7 +633,6 @@ var L = {
   "Map": function () {},
   "map": {
     "addLayer": function () {},
-    "distance": function () {},
     "hasLayer": function () {},
     "eachLayer": function () {},
     "openPopup": function () {},
@@ -660,8 +653,6 @@ var L = {
     "setMaxBounds": function () {},
     "locate": function () {},
     "latLngToContainerPoint": function(){},
-    "_latLngToNewLayerPoint": function(){},
-    "layerPointToContainerPoint": function(){},
     "containerPointToLatLng": function(){},
     "stopLocate": function () {},
     "remove": function () {},
@@ -707,7 +698,6 @@ var L = {
       "imagePath": {},
     },
   },
-  "VideoOverlay": function () {},
   "icon": function () {},
   "Marker": function () {},
   "marker": {
