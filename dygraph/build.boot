@@ -1,11 +1,11 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.7.1" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.9.0" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "1.1.1")
-(def +version+ (str +lib-version+ "-1"))
+(def +lib-version+ "2.1.0")
+(def +version+ (str +lib-version+ "-0"))
 
 (task-options!
   pom  {:project     'cljsjs/dygraph
@@ -17,16 +17,18 @@
 
 (deftask package []
   (comp
-   (download  :url      (str "https://cdnjs.cloudflare.com/ajax/libs/dygraph/" +lib-version+ "/dygraph-combined-dev.js")
-              :checksum "e1a5e2346cad6d3236921f9581922b3f")
-   (download  :url      (str "https://cdnjs.cloudflare.com/ajax/libs/dygraph/" +lib-version+ "/dygraph-combined.js")
-              :checksum "a6fc6e899b07c124d0a0c9b1cb3e9db4")
-   (sift      :move     {#"^dygraph-combined-dev.js"
+   (download  :url      (str "http://dygraphs.com/" +lib-version+ "/dygraph.min.js"))
+   (download  :url      (str "http://dygraphs.com/" +lib-version+ "/dygraph.js"))
+   (download  :url      (str "http://dygraphs.com/" +lib-version+ "/dygraph.css"))
+   (sift      :move     {#"^dygraph.js"
                          "cljsjs/dygraph/development/dygraph.inc.js"
-                         #"^dygraph-combined.js"
-                         "cljsjs/dygraph/production/dygraph.min.inc.js"})
+                         #"^dygraph.min.js"
+                         "cljsjs/dygraph/production/dygraph.min.inc.js"
+                         #"^dygraph.css"
+                         "cljsjs/dygraph/common/dygraph.inc.css"})
    (sift      :include  #{#"^cljsjs"})
    (deps-cljs :name     "cljsjs.dygraph")
    (pom)
-   (jar)))
+   (jar)
+   (validate-checksums)))
 

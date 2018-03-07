@@ -1,10 +1,10 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.8.1" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.9.0" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "4.4.0")
+(def +lib-version+ "4.9.0")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -21,8 +21,13 @@
              :decompress true
              :compression-format "gz"
              :archive-format "tar")
-   (sift :move {#"package/firebase.js" "cljsjs/development/firebase.inc.js"
-                #"package/firebase-node.js" "cljsjs/development/firebase-node.inc.js"
+   (sift :move {#"package/firebase.js" "cljsjs/development/firebase.inc.js" 
+                #"package/firebase-firestore.js" "cljsjs/development/firebase-firestore.inc.js" 
+                #"package/firebase-app.js" "cljsjs/development/firebase-app.inc.js" 
+                #"package/firebase-auth.js" "cljsjs/development/firebase-auth.inc.js" 
+                #"package/firebase-database.js" "cljsjs/development/firebase-database.inc.js" 
+                #"package/firebase-messaging.js" "cljsjs/development/firebase-messageing.inc.js" 
+                #"package/firebase-storage.js" "cljsjs/development/firebase-storage.inc.js" 
                 #"package/externs/" "cljsjs/common/"}
          :include #{#"^cljsjs"
                     #"^deps.cljs"})

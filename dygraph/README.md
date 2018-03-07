@@ -1,7 +1,7 @@
 # cljsjs/dygraph
 [](dependency)
 ```clojure
-[cljsjs/dygraph "1.1.1-1"] ;; latest release
+[cljsjs/dygraph "2.1.0-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -13,7 +13,4 @@ you can require the packaged library like so:
 (ns application.core
   (:require cljsjs.dygraph))
 ```
-[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies
-
-
-
+[flibs]: https://clojurescript.org/reference/packaging-foreign-deps

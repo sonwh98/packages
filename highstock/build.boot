@@ -1,10 +1,10 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.7.1"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.9.0"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "5.0.14")
+(def +lib-version+ "6.0.7")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -17,13 +17,12 @@
 
 (deftask package []
   (comp
-   (download :url (str "https://code.highcharts.com/stock/" +lib-version+ "/highstock.js")
-             :checksum "4F6711DD693160FF8E0A9FB26008C661")
-   (download :url (str "https://code.highcharts.com/stock/" +lib-version+ "/highstock.src.js")
-             :checksum "002EF59E050D2ED3E7686497901B4A51")
-   (sift :move {#"highstock.js"     "cljsjs/production/highstock.min.inc.js"})
-   (sift :move {#"highstock.src.js" "cljsjs/development/highstock.inc.js"})
+   (download :url (str "https://code.highcharts.com/stock/" +lib-version+ "/highstock.js"))
+   (download :url (str "https://code.highcharts.com/stock/" +lib-version+ "/highstock.src.js"))
+   (sift :move {#"highstock.js"     "cljsjs/highstock/production/highstock.min.inc.js"})
+   (sift :move {#"highstock.src.js" "cljsjs/highstock/development/highstock.inc.js"})
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.highstock")
    (pom)
-   (jar)))
+   (jar)
+   (validate-checksums)))

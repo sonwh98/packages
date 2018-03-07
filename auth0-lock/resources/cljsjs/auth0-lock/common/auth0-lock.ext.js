@@ -8,7 +8,6 @@ var Auth0Lock = {
     "defaultMaxListeners": {},
     "listenerCount": function () {}
   },
-  "css": {},
   "defaultMaxListeners": {},
   "listenerCount": function () {},
   "version": {}
@@ -17,6 +16,7 @@ Auth0Lock.prototype = {
   "_events": function () {},
   "_maxListeners": function () {},
   "addListener": function () {},
+  "checkSession": function () {},
   "destroy": function () {},
   "emit": function () {},
   "getProfile": function () {},

@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/highcharts "5.0.14-0"] ;; latest release
+[cljsjs/highcharts "6.0.7-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -42,4 +42,4 @@ Notes:
 - Style by CSS version is packaged separately: https://github.com/cljsjs/packages/tree/master/highcharts-css
     - That package doesn't currently package the modules
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies
+[flibs]: https://clojurescript.org/reference/packaging-foreign-deps
